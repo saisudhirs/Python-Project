@@ -1,12 +1,5 @@
 import pygame 
-
-pygame.init()
-
-screen = pygame.display.set_mode((1000, 600))
-pygame.display.set_caption('Game')
-
-#loopimport pygame 
-
+import time
 pygame.init()
 
 #screen
@@ -30,19 +23,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                pygame.transform.rotate(carImage, -10)
-                pygame.display.update()
-            elif event.key == pygame.K_RIGHT:
-                pygame.transform.rotate(carImage, 10)        
-
-
-running = True
-while running:
-    screen.fill((0, 255, 255))
-    pygame.display.update()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    keys = pygame.key.get_pressed()
     
+    if keys[pygame.K_LEFT]:
+        carImage=pygame.transform.rotate(carImage, -90)
+        time.sleep(0.15)
+        
+    elif keys[pygame.K_RIGHT]:
+        carImage=pygame.transform.rotate(carImage, 90)
+        time.sleep(0.15)
+        
