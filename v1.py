@@ -29,20 +29,19 @@ while running:
         carImage=pygame.transform.rotate(carImage, -22.5)
         time.sleep(0.15)
         
-    elif keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT]:
         carImage=pygame.transform.rotate(carImage, 22.5)
         time.sleep(0.15)
 
-    elif keys[pygame.K_w]:
+    if keys[pygame.K_w]:
         ypos-=1
         
-    elif keys[pygame.K_s]:
+    if keys[pygame.K_s]:
         ypos+=1
         
-    elif keys[pygame.K_a]:
+    if keys[pygame.K_a]:
         xpos-=1
         
-    elif keys[pygame.K_d]:
+    if keys[pygame.K_d]:
         xpos+=1    
-    else:
-        pass
+    
